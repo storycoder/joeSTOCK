@@ -6,9 +6,8 @@
   <thead>
     <tr>
       <th>Username</th>
-      <th>Email</th>
-      <th>Description</th>
-      <th colspan="3"></th>
+      <th>Email</th>  
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -17,10 +16,13 @@
       <tr>
         <td><%= user.username %></td>
         <td><%= user.email %></td>
-        <td><%= user.description %></td>
         <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><% if user.id == current_user.id %>
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete %></td>
+            <% end %>
+        <td><% if user.id == current_user.id || user_signed_in? == current_user.admin %>
+                <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Upload Image', images_path %>

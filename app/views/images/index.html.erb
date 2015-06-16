@@ -14,11 +14,18 @@
   <tbody>
     <% @images.each do |image| %>
       <tr>
+<<<<<<< HEAD
         <td><%= image_tag(image.img, :width => 300) if image.img.present? %></td>
         <td><%= image.user_id %></td>
+=======
+        <td><%= image.img %></td>
+        <td><%= image.user.username %></td>
+>>>>>>> origin/devise-sluggable
         <td><%= link_to 'Show', image %></td>
         <td><%= link_to 'Edit', edit_image_path(image) %></td>
-        <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><% if image.user.id == current_user.id || user_signed_in? == current_user.admin %>
+                <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %></td>
       </tr>
     <% end %>
   </tbody>
