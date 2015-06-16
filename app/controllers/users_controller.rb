@@ -63,6 +63,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def admin
+    current_user.admin
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
