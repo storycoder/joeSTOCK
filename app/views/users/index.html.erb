@@ -17,7 +17,9 @@
         <td><%= user.username %></td>
         <td><%= user.email %></td>
         <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></td>
+        <td><% if user.id == current_user.id %>
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete %></td>
+            <% end %>
         <td><% if user.id == current_user.id || user_signed_in? == current_user.admin %>
                 <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %></td>

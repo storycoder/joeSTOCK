@@ -18,7 +18,7 @@
         <td><%= image.user.username %></td>
         <td><%= link_to 'Show', image %></td>
         <td><%= link_to 'Edit', edit_image_path(image) %></td>
-        <td><% if user.id == current_user.id || user_signed_in? == current_user.admin %>
+        <td><% if image.user.id == current_user.id || user_signed_in? == current_user.admin %>
                 <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %></td>
       </tr>
