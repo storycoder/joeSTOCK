@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
-<<<<<<< HEAD
+
   has_many :photos
-end
-=======
-	has_many :images
+
+
+	
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -13,4 +13,4 @@ end
   friendly_id :username, use: :slugged
 
 end
->>>>>>> origin/devise-sluggable
+

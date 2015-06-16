@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150615220625) do
-=======
-ActiveRecord::Schema.define(version: 20150614150219) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -28,7 +25,6 @@ ActiveRecord::Schema.define(version: 20150614150219) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
->>>>>>> origin/devise-sluggable
 
   create_table "images", force: :cascade do |t|
     t.string   "img"
@@ -48,13 +44,9 @@ ActiveRecord::Schema.define(version: 20150614150219) do
     t.string   "username"
     t.string   "email"
     t.text     "description"
-<<<<<<< HEAD
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "avatar"
-=======
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "avatar"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -66,7 +58,6 @@ ActiveRecord::Schema.define(version: 20150614150219) do
     t.string   "last_sign_in_ip"
     t.boolean  "admin"
     t.string   "slug"
->>>>>>> origin/devise-sluggable
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

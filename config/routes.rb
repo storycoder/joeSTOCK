@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+
   resources :photos
-=======
   root 'users#index'
   devise_for :users, :controllers => { registrations: 'registrations' }
->>>>>>> origin/devise-sluggable
   resources :users
   resources :images
 

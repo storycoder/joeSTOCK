@@ -15,5 +15,10 @@
   <%= @user.admin %>
 </p>
 
+<% @user.photos.each do |photo| %>
+      <%= photo.user.username %>
+      <%= image_tag(photo.pic, :width =>300) %>
+<% end %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
