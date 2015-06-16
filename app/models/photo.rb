@@ -1,3 +1,4 @@
 class Photo < ActiveRecord::Base
-	mount_uploader :img, ImageUploader
+	belongs_to :user
+	mount_uploader :pic, ImageUploader
 end
