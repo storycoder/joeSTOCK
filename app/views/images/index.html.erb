@@ -14,8 +14,13 @@
   <tbody>
     <% @images.each do |image| %>
       <tr>
+<<<<<<< HEAD
         <td><%= image.img %></td>
         <td><%= image.user.username %></td>
+=======
+        <td><%= image_tag(image.img, :width => 300) if image.img.present? %></td>
+        <td><%= image.user_id %></td>
+>>>>>>> origin/carrier_wave
         <td><%= link_to 'Show', image %></td>
         <td><%= link_to 'Edit', edit_image_path(image) %></td>
         <td><% if user.id == current_user.id || user_signed_in? == current_user.admin %>

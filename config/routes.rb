@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   root 'users#index'
   devise_for :users
+=======
+  resources :photos
+>>>>>>> origin/carrier_wave
   resources :users
   resources :images
   # The priority is based upon order of creation: first created -> highest priority.

@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150611142344) do
+=======
+ActiveRecord::Schema.define(version: 20150615220625) do
+>>>>>>> origin/carrier_wave
 
   create_table "images", force: :cascade do |t|
     t.string   "img"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "pic"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150611142344) do
     t.string   "username"
     t.string   "email"
     t.text     "description"
+<<<<<<< HEAD
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -36,6 +48,11 @@ ActiveRecord::Schema.define(version: 20150611142344) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "admin"
+=======
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "avatar"
+>>>>>>> origin/carrier_wave
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
