@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20150615220625) do
     t.text     "description"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "avatar"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -56,6 +55,7 @@ ActiveRecord::Schema.define(version: 20150615220625) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "avatar"
     t.boolean  "admin"
     t.string   "slug"
   end

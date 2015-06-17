@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'stripe'
 gem 'carrierwave'
 gem 'friendly_id', '~> 5.1.0'
 gem 'tzinfo'
