@@ -10,10 +10,16 @@
   <%= @user.email %>
 </p>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
+
+ 
+  <% @user.photos.each do |photo| %>
+      <%= photo.user.username %>
+      <%= image_tag(photo.pic, :width =>300) %>
+      <%= link_to 'Show', photo %>
+  <% end %>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+<br>
+<%= link_to 'New Photo', new_photo_path %>
