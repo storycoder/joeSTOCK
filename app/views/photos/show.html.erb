@@ -1,16 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Pic:</strong>
+
   <%= image_tag(@photo.pic, :width => 400) if @photo.pic.present? %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @photo.user.username %>
+ 
+  from the acct of: <strong><%= @photo.user.username %></strong>
 </p>
 
+<p>
+  <strong>Price:</strong>
+  <%= @photo.price %>
+</p>
+
+<br>
+<p>
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>
+<%= link_to 'Back Home', users_path %></p>
 <br>
 

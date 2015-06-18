@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Username:</strong>
-  <%= @user.username %>
+  About <%= @user.username %>:
+   <em><%= @user.description %></em>
 </p>
 
 <p>
@@ -11,15 +11,18 @@
 </p>
 
 
- 
+ <p>
   <% @user.photos.each do |photo| %>
       <%= photo.user.username %>
       <%= image_tag(photo.pic, :width =>300) %>
       <%= link_to 'Show', photo %>
   <% end %>
+ <br>
+</p>
+<p>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-<br>
-<%= link_to 'New Photo', new_photo_path %>
+<%= link_to 'Edit Profile', edit_user_path(@user) %> |
+<%= link_to 'Back Home', users_path %>
+<br><br>
+<%= link_to 'Add New Photo', new_photo_path %>
+</p>

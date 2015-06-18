@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :username, use: :slugged
+  validates :username, presence: true
 
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cart_items
   resources :photos
   root 'users#index'
   devise_for :users, :controllers => { registrations: 'registrations' }
