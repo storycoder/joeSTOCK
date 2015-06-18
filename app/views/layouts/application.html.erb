@@ -4,11 +4,114 @@
   <title>JoeSTOCK</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            var url = window.location.pathname;
+            var substr = url.split('/');
+            var urlaspx = substr[substr.length-1];
+            $('.nav').find('.active').removeClass('active');
+            $('.nav li a').each(function () {
+                if (this.href.indexOf(urlaspx) >= 0) {
+                    $(this).parent().addClass('active');
+                }
+            });
+        });
+    </script>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link href='http://fonts.googleapis.com/css?family=Kelly+Slab' rel='stylesheet' type='text/css'>
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/parallax_style_1.1.3.css" rel="stylesheet" />
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" />
+<link href="css/services_slider/lean-slider.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/portfolio_gallery.css">
+<!--Portfolio Gallery -->
+<link href="css/font-awesome.css" rel="stylesheet">
+<!--font-awesome for Icons -->
+<link href="css/jquery.classybox.css" rel="stylesheet" />
+<!--classybox LightBox-->
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="clearfix" data-spy="scroll" data-target="#navbar" data-offset="10">
+<div class="row-fluid">
+        <div id="navbar" class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container"> 
+                	<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+                		<span class="icon-bar"></span> 
+                		<span class="icon-bar"></span> 
+                		<span class="icon-bar"></span> 
+                	</a>
+                		<%= link_to root_path, class: "brand" do %>
+                			joe<%= content_tag :span, "STOCK" %>
+                		<% end %>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <!-- <li class="active dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li> <a href="index.html">Home Style 1</a> </li>
+                                    <li> <a href="3d_slider.html">Home Style 2</a> </li>
+                                    <li> <a href="layer_slider.html">Home Style 3</a> </li>
+                                    <li> <a href="nivo_slider.html">Home Style 4</a> </li>
+                                    <li> <a href="parallax_slider.html">Home Style 5</a> </li>
+                                    <li> <a href="portfolio_slider.html">Home Style 6</a> </li>
+                                </ul>
+                            </li> -->
 
-<%= yield %>
+                            <li> <%= link_to 'Home', root_path %> </li>
+                            <li> <%= link_to 'Explore', images_path %> </li>
+                            <li> <%= link_to 'Users', users_path %> </li>
+                            <li> <a href="#Portfolio">Portfolio</a> </li>
+                            <li> <a href="#LargeSlider">Gallery</a> </li>
+                            <li> <a href="#Contact">Contact</a> </li>
+                            <!-- <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> External Pages <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="about_us.html">About Us</a></li>
+                                    <li><a href="our_services.html">Our Services</a></li>
+                                    <li><a href="portfolio_page.html">Our Portfolio</a></li>
+                                    <li><a href="gallery.html">Gallery</a></li>
+                                    <li><a href="pricing.html">Pricing Tables</a></li>
+                                    <li><a href="icons.html">Icons</a></li>
+                                    <li><a href="time_line.html">Timeline</a></li>
+                                </ul>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <div ng-view></div>
+                    <!--/.nav-collapse --> 
+                </div>
+            </div>
+        </div>
+        
+        <%= yield %>
+
+        <div class="container-fluid Footer">
+            <div class="container">
+                <footer>
+                    <!-- <ul class="Social">
+                        <li> <a rel="tooltip" class="Rss" href="#" data-placement="top" data-original-title="RSS">Rss</a> </li>
+                        <li> <a class="Facebook" rel="tooltip" href="#" data-original-title="Facebook">Facebook</a> </li>
+                        <li> <a class="Twitter" rel="tooltip" href="#" data-original-title="Twitter">Twitter</a> </li>
+                        <li> <a class="Dribbble" rel="tooltip" href="#" data-original-title="Dribbble">Dribbble</a> </li>
+                        <li> <a class="YouTube" rel="tooltip" href="#" data-original-title="YouTube">YouTube</a> </li>
+                        <li> <a class="Behance" rel="tooltip" href="#" data-original-title="Behance">Behance</a> </li>
+                        <li> <a class="Deviantart" rel="tooltip" href="#" data-original-title="Deviantart">Deviantart</a> </li>
+                        <li> <a class="Wordpress" rel="tooltip" href="#" data-original-title="Wordpress">Wordpress</a> </li>
+                        <li> <a class="Picasa" rel="tooltip" href="#" data-original-title="Picasa">Picasa</a> </li>
+                    </ul> -->
+                    <a href="#welcome" class="brand">joe<span>STOCK</span> </a>
+                    <p>All rights reserved. Theme by &copy; <a href="mailto:ahmedeabbas@yahoo.com">Coyier</a> </p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
 
 </body>
 </html>

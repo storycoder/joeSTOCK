@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+ .navbar {
+ 	background: url('debut_dark.png');
+ }
+ 
+.navbar .brand:hover {
+	background-color:rgba(131,131,131,0.08);
+}
+
+.Footer a.brand:hover {
+	background-color: rgba(131,131,131,0.08);
+}
+
+.navbar .brand{
+	font-size:40px;
+}
+
+.navbar .brand span{
+	font-size: 50px;
+}
+
+.navbar .nav > .active > a {
+	color:#fff !important;
+	text-decoration: none;
+	background-color: #F96E5B;
+	text-shadow: 1px 1px 0 #C9453B !important;
+}

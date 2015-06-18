@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+
   resources :photos
-  root 'users#index'
+  root 'pages#index'
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users
   resources :images
